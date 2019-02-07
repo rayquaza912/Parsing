@@ -15,14 +15,13 @@ function getResponseTime () {
 		echo 'Error'
 	else
 		r=$(echo "$seq_1+$seq_2+$seq_3" | bc )
-		#echo "Average response time : $r ms"
 		echo "$r ms"
 	fi
 }
 
 function getResolvStat () {
 	a=`nslookup $1 | grep -oE 'name = ([a-z0-9]|\-|\.)+' | sed 's/name = //g'`
-	b=`nslookup google.com | grep -oE 'Address: ([0-9]{1,3}\.){3}[0-9]{1,3}' | sed 's/Address: //g'`
+	b=`nslookup $2 | grep -oE 'Address: ([0-9]{1,3}\.){3}[0-9]{1,3}' | sed 's/Address: //g'`
 
 	if [ "$a" = "" ] || [ "$b" = "" ]; then
 		echo 'Error'
@@ -34,12 +33,11 @@ function getResolvStat () {
 function checkVirtualHosts () {
 	list=""
 	httpStatus=""
+
 	for i in $@; do
 		if wget --spider $i 2> /dev/null; then
-			#echo "$i is up !"
 			eval httpStatus="${httpStatus},UP"
 		else
-			#echo "$i is down."
 			eval httpStatus="${httpStatus},DOWN"
 		fi
 		eval list="${list},${i}"
@@ -50,6 +48,7 @@ function checkVirtualHosts () {
 		echo "Timestamp,Average response time,Name resolution, Reverse resolution${list}" > $output
 	fi
 }
+
 
 tStamp=$(date +%x-%X)
 rTime=`getResponseTime $ipv4`

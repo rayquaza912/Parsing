@@ -4,7 +4,7 @@
 
 #ipv4='192.168.10.10'; dns=carnofluxe.domain
 ipv4=8.8.8.8; dns=google.com
-output=result.csv
+output=result
 
 function getResponseTime () {
 	for i in `seq 1 3`; do
@@ -44,8 +44,8 @@ function checkVirtualHosts () {
 	done
 
 	echo $httpStatus
-	if [ ! -f $output ]; then
-		echo "Timestamp,Average response time,Name resolution, Reverse resolution${list}" > $output
+	if [ ! -f ${output}.csv ]; then
+		echo "Timestamp,Average response time,Name resolution, Reverse resolution${list}" > ${output}.csv
 	fi
 }
 
@@ -55,5 +55,6 @@ rTime=`getResponseTime $ipv4`
 rStatus=`getResolvStat $ipv4 $dns`
 vHosts=`checkVirtualHosts carnofluxe.domain supervision.carnofluxe.domain wiki.carnofluxe.domain google.com`
 
-echo "${tStamp},${rTime},${rStatus}${vHosts}" >> $output
+echo "${tStamp},${rTime},${rStatus}${vHosts}" >> ${output}.csv
 
+csv2html -o ${output}.html ${output}.csv

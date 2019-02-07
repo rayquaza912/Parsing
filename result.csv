@@ -5,3 +5,4 @@ Timestamp,Average response time,Name resolution, Reverse resolution,carnofluxe.d
 07/02/2019-23:31:10,18.22 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
 07/02/2019-23:31:12,18.17 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
 07/02/2019-23:31:15,18.81 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
+07/02/2019-23:50:00,18.91 ms,google-public-dns-a.google.com.,216.58.204.238,DOWN,DOWN,DOWN,UP

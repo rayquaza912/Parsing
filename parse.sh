@@ -1,5 +1,5 @@
 #!/bin/bash
-# Apache log parser
+# Apache2 log parser
 
 if [ -z $1 ]; then log='/var/log/apache2/access.log'
 else log=$1

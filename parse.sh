@@ -8,7 +8,7 @@ fi
 sep=','
 output=clients
 
-if [ ! -f $output ]; then
+if [ ! -f ${output}.csv ]; then
 	echo 'Timestamp, Source IP' > ${output}.csv
 fi
 

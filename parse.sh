@@ -15,7 +15,6 @@ fi
 for i in `seq 1 $(cat $log | wc -l)`; do
 	timestamp=`grep -oE '[0-9]{2}/[aAbcDeFgJlMnNoOprStuvy]{3}/2[0-9]{3}(:[0-9]{2}){3}' $log | head -n $i | tail -n 1`
 	ipv4=`grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' $log | head -n $i | tail -n 1`
-	#echo -n $timestamp; echo -n ${sep}; echo $ipv4 >> $output
 	echo "${timestamp},${ipv4}" >> ${output}.csv
 done
 

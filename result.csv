@@ -1,0 +1,7 @@
+Timestamp,Average response time,Name resolution, Reverse resolution,carnofluxe.domain,supervision.carnofluxe.domain,wiki.carnofluxe.domain,google.com
+07/02/2019-23:31:01,18.64 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
+07/02/2019-23:31:07,18.57 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
+07/02/2019-23:31:09,19.93 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
+07/02/2019-23:31:10,18.22 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
+07/02/2019-23:31:12,18.17 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP
+07/02/2019-23:31:15,18.81 ms,google-public-dns-a.google.com.,216.58.204.142,DOWN,DOWN,DOWN,UP

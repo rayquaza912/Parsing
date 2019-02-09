@@ -8,7 +8,7 @@ checkfile='~/backup_errors.tmp'; checksize=`cat $checkfile | wc -l`
 date=`date +%d-%m-%Y`
 
 mkdir ${destination}/${date}/
-tar cvzf ${destination}/${date}/backup-${date}.tar.gz --listed-incremental=${list} $directories 2>  $checkfile
+tar cvzf ${destination}/${date}/backup-${date}.tar.gz --listed-incremental=${list} $directories 2>> $checkfile
 cp $list ${destination}/${date}/list-${date}.list
 cp $checkfile ${destination}/${date}/errors-${date}.tmp
 

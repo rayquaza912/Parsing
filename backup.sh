@@ -14,7 +14,8 @@ cp $checkfile ${destination}/${date}/errors-${date}.tmp
 
 if [ `cat $checkfile | wc -l` -gt $checksize ]; then
 	echo '============================'; echo -e "\033[33mWarning : \e[0m please see $checkfile for more details."
-	cat $checkfile
+	from=`echo "$(cat $checkfile | wc -l) - $cheksize + 1" | bc`
+	tail -n $from $chekfile
 	echo '============================'
 	# notify admin
 fi

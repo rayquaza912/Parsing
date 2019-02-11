@@ -20,7 +20,6 @@ function getResponseTime () {
 
 function getResolvStat () {
 	a=`nslookup $1 | grep -oE 'Address: ([0-9]{1,3}\.){3}[0-9]{1,3}' | sed 's/Address: //g'`
-	#a=`nslookup $1 | grep -oE 'name = ([a-z0-9]|\-|\.)+' | sed 's/name = //g'`
 	b=`nslookup $2 | grep -oE 'Address: ([0-9]{1,3}\.){3}[0-9]{1,3}' | sed 's/Address: //g'`
 
 	if [ "$a" = "" ] || [ "$b" = "" ]; then
